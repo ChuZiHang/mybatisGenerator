@@ -1,0 +1,16 @@
+#----------------path--------------
+/.gradle/
+/bin/
+/build/
+/out/
+/classes/
+/.idea/
+/.classpath
+/.settings/
+/.project
+#----------------file---1-----------
+*.iml
+#*.class
+#*.jar
+#*.war
+#*.ear

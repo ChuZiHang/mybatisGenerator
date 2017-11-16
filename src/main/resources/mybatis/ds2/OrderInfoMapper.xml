@@ -1,0 +1,2099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongsport.common.mapper.ds2.OrderInfoMapper">
+  <resultMap id="BaseResultMap" type="com.dongsport.common.model.ds2.OrderInfo">
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="is_split" jdbcType="INTEGER" property="isSplit" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="product_type" jdbcType="INTEGER" property="productType" />
+    <result column="product_num" jdbcType="INTEGER" property="productNum" />
+    <result column="order_money" jdbcType="DOUBLE" property="orderMoney" />
+    <result column="order_date" jdbcType="TIMESTAMP" property="orderDate" />
+    <result column="cust_id" jdbcType="BIGINT" property="custId" />
+    <result column="order_cust_id" jdbcType="BIGINT" property="orderCustId" />
+    <result column="travel_date" jdbcType="TIMESTAMP" property="travelDate" />
+    <result column="get_type" jdbcType="INTEGER" property="getType" />
+    <result column="get_price" jdbcType="DOUBLE" property="getPrice" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="refund_set" jdbcType="INTEGER" property="refundSet" />
+    <result column="cancel_date" jdbcType="TIMESTAMP" property="cancelDate" />
+    <result column="confirm_date" jdbcType="TIMESTAMP" property="confirmDate" />
+    <result column="is_onlinepay" jdbcType="INTEGER" property="isOnlinepay" />
+    <result column="pay_id" jdbcType="VARCHAR" property="payId" />
+    <result column="link_man" jdbcType="VARCHAR" property="linkMan" />
+    <result column="link_phone" jdbcType="VARCHAR" property="linkPhone" />
+    <result column="link_address" jdbcType="VARCHAR" property="linkAddress" />
+    <result column="link_code" jdbcType="VARCHAR" property="linkCode" />
+    <result column="link_email" jdbcType="VARCHAR" property="linkEmail" />
+    <result column="link_credit_type" jdbcType="INTEGER" property="linkCreditType" />
+    <result column="link_credit_no" jdbcType="VARCHAR" property="linkCreditNo" />
+    <result column="pay_money" jdbcType="DOUBLE" property="payMoney" />
+    <result column="is_confirm" jdbcType="INTEGER" property="isConfirm" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="confirm_user" jdbcType="VARCHAR" property="confirmUser" />
+    <result column="cancel_user" jdbcType="VARCHAR" property="cancelUser" />
+    <result column="pay_type" jdbcType="INTEGER" property="payType" />
+    <result column="finish_date" jdbcType="TIMESTAMP" property="finishDate" />
+    <result column="finish_num" jdbcType="INTEGER" property="finishNum" />
+    <result column="finish_money" jdbcType="DOUBLE" property="finishMoney" />
+    <result column="pay_date" jdbcType="TIMESTAMP" property="payDate" />
+    <result column="pay_user" jdbcType="VARCHAR" property="payUser" />
+    <result column="finish_user" jdbcType="VARCHAR" property="finishUser" />
+    <result column="is_send" jdbcType="INTEGER" property="isSend" />
+    <result column="send_content" jdbcType="VARCHAR" property="sendContent" />
+    <result column="send_date" jdbcType="TIMESTAMP" property="sendDate" />
+    <result column="send_user" jdbcType="VARCHAR" property="sendUser" />
+    <result column="cancel_money" jdbcType="DOUBLE" property="cancelMoney" />
+    <result column="is_edit" jdbcType="INTEGER" property="isEdit" />
+    <result column="is_cancel" jdbcType="INTEGER" property="isCancel" />
+    <result column="sendmsg_date" jdbcType="TIMESTAMP" property="sendmsgDate" />
+    <result column="ticket_type" jdbcType="INTEGER" property="ticketType" />
+    <result column="interface_order_id" jdbcType="VARCHAR" property="interfaceOrderId" />
+    <result column="interface_id" jdbcType="VARCHAR" property="interfaceId" />
+    <result column="interface_edit_state" jdbcType="INTEGER" property="interfaceEditState" />
+    <result column="order_password" jdbcType="VARCHAR" property="orderPassword" />
+    <result column="is_single" jdbcType="INTEGER" property="isSingle" />
+    <result column="parent_cust_id" jdbcType="BIGINT" property="parentCustId" />
+    <result column="interface_prod_id" jdbcType="VARCHAR" property="interfaceProdId" />
+    <result column="send_msg_id" jdbcType="INTEGER" property="sendMsgId" />
+    <result column="mem_pay_money" jdbcType="DOUBLE" property="memPayMoney" />
+    <result column="mem_order_money" jdbcType="DOUBLE" property="memOrderMoney" />
+    <result column="old_mem_order_money" jdbcType="DOUBLE" property="oldMemOrderMoney" />
+    <result column="pay_service_fee" jdbcType="DOUBLE" property="payServiceFee" />
+    <result column="account_type" jdbcType="INTEGER" property="accountType" />
+    <result column="order_code" jdbcType="VARCHAR" property="orderCode" />
+    <result column="is_package" jdbcType="INTEGER" property="isPackage" />
+    <result column="end_travel_date" jdbcType="TIMESTAMP" property="endTravelDate" />
+    <result column="cancel_cust_id" jdbcType="BIGINT" property="cancelCustId" />
+    <result column="cancel_state" jdbcType="INTEGER" property="cancelState" />
+    <result column="print_date" jdbcType="TIMESTAMP" property="printDate" />
+    <result column="print_user" jdbcType="VARCHAR" property="printUser" />
+    <result column="print_excode" jdbcType="VARCHAR" property="printExcode" />
+    <result column="send_content1" jdbcType="VARCHAR" property="sendContent1" />
+    <result column="send_content2" jdbcType="VARCHAR" property="sendContent2" />
+    <result column="is_print" jdbcType="INTEGER" property="isPrint" />
+    <result column="print_excode2" jdbcType="VARCHAR" property="printExcode2" />
+    <result column="account_money" jdbcType="DOUBLE" property="accountMoney" />
+    <result column="account_date" jdbcType="TIMESTAMP" property="accountDate" />
+    <result column="account_user_id" jdbcType="VARCHAR" property="accountUserId" />
+    <result column="prod_detail" jdbcType="VARCHAR" property="prodDetail" />
+    <result column="agent_return_money" jdbcType="DOUBLE" property="agentReturnMoney" />
+    <result column="agent_return_date" jdbcType="TIMESTAMP" property="agentReturnDate" />
+    <result column="agent_return_user_id" jdbcType="VARCHAR" property="agentReturnUserId" />
+    <result column="order_memo" jdbcType="VARCHAR" property="orderMemo" />
+    <result column="order_files" jdbcType="VARCHAR" property="orderFiles" />
+    <result column="is_send2" jdbcType="INTEGER" property="isSend2" />
+    <result column="need_sendmsg_date" jdbcType="TIMESTAMP" property="needSendmsgDate" />
+    <result column="merge_order_id" jdbcType="INTEGER" property="mergeOrderId" />
+    <result column="order_source" jdbcType="INTEGER" property="orderSource" />
+    <result column="pay_minute" jdbcType="INTEGER" property="payMinute" />
+    <result column="sendmsg_user" jdbcType="VARCHAR" property="sendmsgUser" />
+    <result column="account_currency_type" jdbcType="INTEGER" property="accountCurrencyType" />
+    <result column="account_exchange_rate" jdbcType="DOUBLE" property="accountExchangeRate" />
+    <result column="account_money2" jdbcType="DOUBLE" property="accountMoney2" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="settle_type" jdbcType="VARCHAR" property="settleType" />
+    <result column="is_stock" jdbcType="INTEGER" property="isStock" />
+    <result column="from_area_id" jdbcType="INTEGER" property="fromAreaId" />
+    <result column="is_autofinish" jdbcType="INTEGER" property="isAutofinish" />
+    <result column="price_codex" jdbcType="VARCHAR" property="priceCodex" />
+    <result column="order_source_id" jdbcType="VARCHAR" property="orderSourceId" />
+    <result column="cancel_num" jdbcType="INTEGER" property="cancelNum" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="cash_coupon_money" jdbcType="DOUBLE" property="cashCouponMoney" />
+    <result column="cash_coupon_status" jdbcType="INTEGER" property="cashCouponStatus" />
+    <result column="cash_coupon_no" jdbcType="BIGINT" property="cashCouponNo" />
+    <result column="cash_coupon_date" jdbcType="TIMESTAMP" property="cashCouponDate" />
+    <result column="mem_cancel_money" jdbcType="DOUBLE" property="memCancelMoney" />
+    <result column="order_venue_fee" jdbcType="DOUBLE" property="orderVenueFee" />
+    <result column="is_change" jdbcType="INTEGER" property="isChange" />
+    <result column="edit_cust_id" jdbcType="INTEGER" property="editCustId" />
+    <result column="is_lock" jdbcType="INTEGER" property="isLock" />
+    <result column="inferface_check_state" jdbcType="INTEGER" property="inferfaceCheckState" />
+    <result column="mem_point_money" jdbcType="DOUBLE" property="memPointMoney" />
+    <result column="all_pay_fee" jdbcType="DOUBLE" property="allPayFee" />
+    <result column="cust_memo" jdbcType="VARCHAR" property="custMemo" />
+    <result column="account_inner_memo" jdbcType="VARCHAR" property="accountInnerMemo" />
+    <result column="inner_memo" jdbcType="VARCHAR" property="innerMemo" />
+    <result column="adjust" jdbcType="VARCHAR" property="adjust" />
+    <result column="change_state" jdbcType="INTEGER" property="changeState" />
+    <result column="apply_user_id" jdbcType="VARCHAR" property="applyUserId" />
+    <result column="return_custom_money" jdbcType="DOUBLE" property="returnCustomMoney" />
+    <result column="interface_cust_id" jdbcType="VARCHAR" property="interfaceCustId" />
+    <result column="cust_sms_content" jdbcType="VARCHAR" property="custSmsContent" />
+    <result column="confirm_minute" jdbcType="INTEGER" property="confirmMinute" />
+    <result column="venue_id" jdbcType="BIGINT" property="venueId" />
+    <result column="site_id" jdbcType="BIGINT" property="siteId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_id, order_type, is_split, product_id, product_type, product_num, order_money, 
+    order_date, cust_id, order_cust_id, travel_date, get_type, get_price, state, refund_set, 
+    cancel_date, confirm_date, is_onlinepay, pay_id, link_man, link_phone, link_address, 
+    link_code, link_email, link_credit_type, link_credit_no, pay_money, is_confirm, user_id, 
+    confirm_user, cancel_user, pay_type, finish_date, finish_num, finish_money, pay_date, 
+    pay_user, finish_user, is_send, send_content, send_date, send_user, cancel_money, 
+    is_edit, is_cancel, sendmsg_date, ticket_type, interface_order_id, interface_id, 
+    interface_edit_state, order_password, is_single, parent_cust_id, interface_prod_id, 
+    send_msg_id, mem_pay_money, mem_order_money, old_mem_order_money, pay_service_fee, 
+    account_type, order_code, is_package, end_travel_date, cancel_cust_id, cancel_state, 
+    print_date, print_user, print_excode, send_content1, send_content2, is_print, print_excode2, 
+    account_money, account_date, account_user_id, prod_detail, agent_return_money, agent_return_date, 
+    agent_return_user_id, order_memo, order_files, is_send2, need_sendmsg_date, merge_order_id, 
+    order_source, pay_minute, sendmsg_user, account_currency_type, account_exchange_rate, 
+    account_money2, area_id, settle_type, is_stock, from_area_id, is_autofinish, price_codex, 
+    order_source_id, cancel_num, member_id, cash_coupon_money, cash_coupon_status, cash_coupon_no, 
+    cash_coupon_date, mem_cancel_money, order_venue_fee, is_change, edit_cust_id, is_lock, 
+    inferface_check_state, mem_point_money, all_pay_fee, cust_memo, account_inner_memo, 
+    inner_memo, adjust, change_state, apply_user_id, return_custom_money, interface_cust_id, 
+    cust_sms_content, confirm_minute, venue_id, site_id
+  </sql>
+  <select id="selectByExample" parameterType="com.dongsport.common.model.ds2.OrderInfoExample" resultMap="BaseResultMap">
+    <include refid="pagePrefix" />
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <include refid="pageSuffix" />
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_info
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from order_info
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dongsport.common.model.ds2.OrderInfoExample">
+    delete from order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dongsport.common.model.ds2.OrderInfo">
+    insert into order_info (order_id, order_type, is_split, 
+      product_id, product_type, product_num, 
+      order_money, order_date, cust_id, 
+      order_cust_id, travel_date, get_type, 
+      get_price, state, refund_set, 
+      cancel_date, confirm_date, is_onlinepay, 
+      pay_id, link_man, link_phone, 
+      link_address, link_code, link_email, 
+      link_credit_type, link_credit_no, pay_money, 
+      is_confirm, user_id, confirm_user, 
+      cancel_user, pay_type, finish_date, 
+      finish_num, finish_money, pay_date, 
+      pay_user, finish_user, is_send, 
+      send_content, send_date, send_user, 
+      cancel_money, is_edit, is_cancel, 
+      sendmsg_date, ticket_type, interface_order_id, 
+      interface_id, interface_edit_state, order_password, 
+      is_single, parent_cust_id, interface_prod_id, 
+      send_msg_id, mem_pay_money, mem_order_money, 
+      old_mem_order_money, pay_service_fee, account_type, 
+      order_code, is_package, end_travel_date, 
+      cancel_cust_id, cancel_state, print_date, 
+      print_user, print_excode, send_content1, 
+      send_content2, is_print, print_excode2, 
+      account_money, account_date, account_user_id, 
+      prod_detail, agent_return_money, agent_return_date, 
+      agent_return_user_id, order_memo, order_files, 
+      is_send2, need_sendmsg_date, merge_order_id, 
+      order_source, pay_minute, sendmsg_user, 
+      account_currency_type, account_exchange_rate, 
+      account_money2, area_id, settle_type, 
+      is_stock, from_area_id, is_autofinish, 
+      price_codex, order_source_id, cancel_num, 
+      member_id, cash_coupon_money, cash_coupon_status, 
+      cash_coupon_no, cash_coupon_date, mem_cancel_money, 
+      order_venue_fee, is_change, edit_cust_id, 
+      is_lock, inferface_check_state, mem_point_money, 
+      all_pay_fee, cust_memo, account_inner_memo, 
+      inner_memo, adjust, change_state, 
+      apply_user_id, return_custom_money, interface_cust_id, 
+      cust_sms_content, confirm_minute, venue_id, 
+      site_id)
+    values (#{orderId,jdbcType=BIGINT}, #{orderType,jdbcType=INTEGER}, #{isSplit,jdbcType=INTEGER}, 
+      #{productId,jdbcType=BIGINT}, #{productType,jdbcType=INTEGER}, #{productNum,jdbcType=INTEGER}, 
+      #{orderMoney,jdbcType=DOUBLE}, #{orderDate,jdbcType=TIMESTAMP}, #{custId,jdbcType=BIGINT}, 
+      #{orderCustId,jdbcType=BIGINT}, #{travelDate,jdbcType=TIMESTAMP}, #{getType,jdbcType=INTEGER}, 
+      #{getPrice,jdbcType=DOUBLE}, #{state,jdbcType=INTEGER}, #{refundSet,jdbcType=INTEGER}, 
+      #{cancelDate,jdbcType=TIMESTAMP}, #{confirmDate,jdbcType=TIMESTAMP}, #{isOnlinepay,jdbcType=INTEGER}, 
+      #{payId,jdbcType=VARCHAR}, #{linkMan,jdbcType=VARCHAR}, #{linkPhone,jdbcType=VARCHAR}, 
+      #{linkAddress,jdbcType=VARCHAR}, #{linkCode,jdbcType=VARCHAR}, #{linkEmail,jdbcType=VARCHAR}, 
+      #{linkCreditType,jdbcType=INTEGER}, #{linkCreditNo,jdbcType=VARCHAR}, #{payMoney,jdbcType=DOUBLE}, 
+      #{isConfirm,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{confirmUser,jdbcType=VARCHAR}, 
+      #{cancelUser,jdbcType=VARCHAR}, #{payType,jdbcType=INTEGER}, #{finishDate,jdbcType=TIMESTAMP}, 
+      #{finishNum,jdbcType=INTEGER}, #{finishMoney,jdbcType=DOUBLE}, #{payDate,jdbcType=TIMESTAMP}, 
+      #{payUser,jdbcType=VARCHAR}, #{finishUser,jdbcType=VARCHAR}, #{isSend,jdbcType=INTEGER}, 
+      #{sendContent,jdbcType=VARCHAR}, #{sendDate,jdbcType=TIMESTAMP}, #{sendUser,jdbcType=VARCHAR}, 
+      #{cancelMoney,jdbcType=DOUBLE}, #{isEdit,jdbcType=INTEGER}, #{isCancel,jdbcType=INTEGER}, 
+      #{sendmsgDate,jdbcType=TIMESTAMP}, #{ticketType,jdbcType=INTEGER}, #{interfaceOrderId,jdbcType=VARCHAR}, 
+      #{interfaceId,jdbcType=VARCHAR}, #{interfaceEditState,jdbcType=INTEGER}, #{orderPassword,jdbcType=VARCHAR}, 
+      #{isSingle,jdbcType=INTEGER}, #{parentCustId,jdbcType=BIGINT}, #{interfaceProdId,jdbcType=VARCHAR}, 
+      #{sendMsgId,jdbcType=INTEGER}, #{memPayMoney,jdbcType=DOUBLE}, #{memOrderMoney,jdbcType=DOUBLE}, 
+      #{oldMemOrderMoney,jdbcType=DOUBLE}, #{payServiceFee,jdbcType=DOUBLE}, #{accountType,jdbcType=INTEGER}, 
+      #{orderCode,jdbcType=VARCHAR}, #{isPackage,jdbcType=INTEGER}, #{endTravelDate,jdbcType=TIMESTAMP}, 
+      #{cancelCustId,jdbcType=BIGINT}, #{cancelState,jdbcType=INTEGER}, #{printDate,jdbcType=TIMESTAMP}, 
+      #{printUser,jdbcType=VARCHAR}, #{printExcode,jdbcType=VARCHAR}, #{sendContent1,jdbcType=VARCHAR}, 
+      #{sendContent2,jdbcType=VARCHAR}, #{isPrint,jdbcType=INTEGER}, #{printExcode2,jdbcType=VARCHAR}, 
+      #{accountMoney,jdbcType=DOUBLE}, #{accountDate,jdbcType=TIMESTAMP}, #{accountUserId,jdbcType=VARCHAR}, 
+      #{prodDetail,jdbcType=VARCHAR}, #{agentReturnMoney,jdbcType=DOUBLE}, #{agentReturnDate,jdbcType=TIMESTAMP}, 
+      #{agentReturnUserId,jdbcType=VARCHAR}, #{orderMemo,jdbcType=VARCHAR}, #{orderFiles,jdbcType=VARCHAR}, 
+      #{isSend2,jdbcType=INTEGER}, #{needSendmsgDate,jdbcType=TIMESTAMP}, #{mergeOrderId,jdbcType=INTEGER}, 
+      #{orderSource,jdbcType=INTEGER}, #{payMinute,jdbcType=INTEGER}, #{sendmsgUser,jdbcType=VARCHAR}, 
+      #{accountCurrencyType,jdbcType=INTEGER}, #{accountExchangeRate,jdbcType=DOUBLE}, 
+      #{accountMoney2,jdbcType=DOUBLE}, #{areaId,jdbcType=INTEGER}, #{settleType,jdbcType=VARCHAR}, 
+      #{isStock,jdbcType=INTEGER}, #{fromAreaId,jdbcType=INTEGER}, #{isAutofinish,jdbcType=INTEGER}, 
+      #{priceCodex,jdbcType=VARCHAR}, #{orderSourceId,jdbcType=VARCHAR}, #{cancelNum,jdbcType=INTEGER}, 
+      #{memberId,jdbcType=VARCHAR}, #{cashCouponMoney,jdbcType=DOUBLE}, #{cashCouponStatus,jdbcType=INTEGER}, 
+      #{cashCouponNo,jdbcType=BIGINT}, #{cashCouponDate,jdbcType=TIMESTAMP}, #{memCancelMoney,jdbcType=DOUBLE}, 
+      #{orderVenueFee,jdbcType=DOUBLE}, #{isChange,jdbcType=INTEGER}, #{editCustId,jdbcType=INTEGER}, 
+      #{isLock,jdbcType=INTEGER}, #{inferfaceCheckState,jdbcType=INTEGER}, #{memPointMoney,jdbcType=DOUBLE}, 
+      #{allPayFee,jdbcType=DOUBLE}, #{custMemo,jdbcType=VARCHAR}, #{accountInnerMemo,jdbcType=VARCHAR}, 
+      #{innerMemo,jdbcType=VARCHAR}, #{adjust,jdbcType=VARCHAR}, #{changeState,jdbcType=INTEGER}, 
+      #{applyUserId,jdbcType=VARCHAR}, #{returnCustomMoney,jdbcType=DOUBLE}, #{interfaceCustId,jdbcType=VARCHAR}, 
+      #{custSmsContent,jdbcType=VARCHAR}, #{confirmMinute,jdbcType=INTEGER}, #{venueId,jdbcType=BIGINT}, 
+      #{siteId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dongsport.common.model.ds2.OrderInfo">
+    insert into order_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="isSplit != null">
+        is_split,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="productNum != null">
+        product_num,
+      </if>
+      <if test="orderMoney != null">
+        order_money,
+      </if>
+      <if test="orderDate != null">
+        order_date,
+      </if>
+      <if test="custId != null">
+        cust_id,
+      </if>
+      <if test="orderCustId != null">
+        order_cust_id,
+      </if>
+      <if test="travelDate != null">
+        travel_date,
+      </if>
+      <if test="getType != null">
+        get_type,
+      </if>
+      <if test="getPrice != null">
+        get_price,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="refundSet != null">
+        refund_set,
+      </if>
+      <if test="cancelDate != null">
+        cancel_date,
+      </if>
+      <if test="confirmDate != null">
+        confirm_date,
+      </if>
+      <if test="isOnlinepay != null">
+        is_onlinepay,
+      </if>
+      <if test="payId != null">
+        pay_id,
+      </if>
+      <if test="linkMan != null">
+        link_man,
+      </if>
+      <if test="linkPhone != null">
+        link_phone,
+      </if>
+      <if test="linkAddress != null">
+        link_address,
+      </if>
+      <if test="linkCode != null">
+        link_code,
+      </if>
+      <if test="linkEmail != null">
+        link_email,
+      </if>
+      <if test="linkCreditType != null">
+        link_credit_type,
+      </if>
+      <if test="linkCreditNo != null">
+        link_credit_no,
+      </if>
+      <if test="payMoney != null">
+        pay_money,
+      </if>
+      <if test="isConfirm != null">
+        is_confirm,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="confirmUser != null">
+        confirm_user,
+      </if>
+      <if test="cancelUser != null">
+        cancel_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="finishDate != null">
+        finish_date,
+      </if>
+      <if test="finishNum != null">
+        finish_num,
+      </if>
+      <if test="finishMoney != null">
+        finish_money,
+      </if>
+      <if test="payDate != null">
+        pay_date,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="finishUser != null">
+        finish_user,
+      </if>
+      <if test="isSend != null">
+        is_send,
+      </if>
+      <if test="sendContent != null">
+        send_content,
+      </if>
+      <if test="sendDate != null">
+        send_date,
+      </if>
+      <if test="sendUser != null">
+        send_user,
+      </if>
+      <if test="cancelMoney != null">
+        cancel_money,
+      </if>
+      <if test="isEdit != null">
+        is_edit,
+      </if>
+      <if test="isCancel != null">
+        is_cancel,
+      </if>
+      <if test="sendmsgDate != null">
+        sendmsg_date,
+      </if>
+      <if test="ticketType != null">
+        ticket_type,
+      </if>
+      <if test="interfaceOrderId != null">
+        interface_order_id,
+      </if>
+      <if test="interfaceId != null">
+        interface_id,
+      </if>
+      <if test="interfaceEditState != null">
+        interface_edit_state,
+      </if>
+      <if test="orderPassword != null">
+        order_password,
+      </if>
+      <if test="isSingle != null">
+        is_single,
+      </if>
+      <if test="parentCustId != null">
+        parent_cust_id,
+      </if>
+      <if test="interfaceProdId != null">
+        interface_prod_id,
+      </if>
+      <if test="sendMsgId != null">
+        send_msg_id,
+      </if>
+      <if test="memPayMoney != null">
+        mem_pay_money,
+      </if>
+      <if test="memOrderMoney != null">
+        mem_order_money,
+      </if>
+      <if test="oldMemOrderMoney != null">
+        old_mem_order_money,
+      </if>
+      <if test="payServiceFee != null">
+        pay_service_fee,
+      </if>
+      <if test="accountType != null">
+        account_type,
+      </if>
+      <if test="orderCode != null">
+        order_code,
+      </if>
+      <if test="isPackage != null">
+        is_package,
+      </if>
+      <if test="endTravelDate != null">
+        end_travel_date,
+      </if>
+      <if test="cancelCustId != null">
+        cancel_cust_id,
+      </if>
+      <if test="cancelState != null">
+        cancel_state,
+      </if>
+      <if test="printDate != null">
+        print_date,
+      </if>
+      <if test="printUser != null">
+        print_user,
+      </if>
+      <if test="printExcode != null">
+        print_excode,
+      </if>
+      <if test="sendContent1 != null">
+        send_content1,
+      </if>
+      <if test="sendContent2 != null">
+        send_content2,
+      </if>
+      <if test="isPrint != null">
+        is_print,
+      </if>
+      <if test="printExcode2 != null">
+        print_excode2,
+      </if>
+      <if test="accountMoney != null">
+        account_money,
+      </if>
+      <if test="accountDate != null">
+        account_date,
+      </if>
+      <if test="accountUserId != null">
+        account_user_id,
+      </if>
+      <if test="prodDetail != null">
+        prod_detail,
+      </if>
+      <if test="agentReturnMoney != null">
+        agent_return_money,
+      </if>
+      <if test="agentReturnDate != null">
+        agent_return_date,
+      </if>
+      <if test="agentReturnUserId != null">
+        agent_return_user_id,
+      </if>
+      <if test="orderMemo != null">
+        order_memo,
+      </if>
+      <if test="orderFiles != null">
+        order_files,
+      </if>
+      <if test="isSend2 != null">
+        is_send2,
+      </if>
+      <if test="needSendmsgDate != null">
+        need_sendmsg_date,
+      </if>
+      <if test="mergeOrderId != null">
+        merge_order_id,
+      </if>
+      <if test="orderSource != null">
+        order_source,
+      </if>
+      <if test="payMinute != null">
+        pay_minute,
+      </if>
+      <if test="sendmsgUser != null">
+        sendmsg_user,
+      </if>
+      <if test="accountCurrencyType != null">
+        account_currency_type,
+      </if>
+      <if test="accountExchangeRate != null">
+        account_exchange_rate,
+      </if>
+      <if test="accountMoney2 != null">
+        account_money2,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="settleType != null">
+        settle_type,
+      </if>
+      <if test="isStock != null">
+        is_stock,
+      </if>
+      <if test="fromAreaId != null">
+        from_area_id,
+      </if>
+      <if test="isAutofinish != null">
+        is_autofinish,
+      </if>
+      <if test="priceCodex != null">
+        price_codex,
+      </if>
+      <if test="orderSourceId != null">
+        order_source_id,
+      </if>
+      <if test="cancelNum != null">
+        cancel_num,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="cashCouponMoney != null">
+        cash_coupon_money,
+      </if>
+      <if test="cashCouponStatus != null">
+        cash_coupon_status,
+      </if>
+      <if test="cashCouponNo != null">
+        cash_coupon_no,
+      </if>
+      <if test="cashCouponDate != null">
+        cash_coupon_date,
+      </if>
+      <if test="memCancelMoney != null">
+        mem_cancel_money,
+      </if>
+      <if test="orderVenueFee != null">
+        order_venue_fee,
+      </if>
+      <if test="isChange != null">
+        is_change,
+      </if>
+      <if test="editCustId != null">
+        edit_cust_id,
+      </if>
+      <if test="isLock != null">
+        is_lock,
+      </if>
+      <if test="inferfaceCheckState != null">
+        inferface_check_state,
+      </if>
+      <if test="memPointMoney != null">
+        mem_point_money,
+      </if>
+      <if test="allPayFee != null">
+        all_pay_fee,
+      </if>
+      <if test="custMemo != null">
+        cust_memo,
+      </if>
+      <if test="accountInnerMemo != null">
+        account_inner_memo,
+      </if>
+      <if test="innerMemo != null">
+        inner_memo,
+      </if>
+      <if test="adjust != null">
+        adjust,
+      </if>
+      <if test="changeState != null">
+        change_state,
+      </if>
+      <if test="applyUserId != null">
+        apply_user_id,
+      </if>
+      <if test="returnCustomMoney != null">
+        return_custom_money,
+      </if>
+      <if test="interfaceCustId != null">
+        interface_cust_id,
+      </if>
+      <if test="custSmsContent != null">
+        cust_sms_content,
+      </if>
+      <if test="confirmMinute != null">
+        confirm_minute,
+      </if>
+      <if test="venueId != null">
+        venue_id,
+      </if>
+      <if test="siteId != null">
+        site_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="isSplit != null">
+        #{isSplit,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderMoney != null">
+        #{orderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderDate != null">
+        #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="custId != null">
+        #{custId,jdbcType=BIGINT},
+      </if>
+      <if test="orderCustId != null">
+        #{orderCustId,jdbcType=BIGINT},
+      </if>
+      <if test="travelDate != null">
+        #{travelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getType != null">
+        #{getType,jdbcType=INTEGER},
+      </if>
+      <if test="getPrice != null">
+        #{getPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="refundSet != null">
+        #{refundSet,jdbcType=INTEGER},
+      </if>
+      <if test="cancelDate != null">
+        #{cancelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmDate != null">
+        #{confirmDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isOnlinepay != null">
+        #{isOnlinepay,jdbcType=INTEGER},
+      </if>
+      <if test="payId != null">
+        #{payId,jdbcType=VARCHAR},
+      </if>
+      <if test="linkMan != null">
+        #{linkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="linkPhone != null">
+        #{linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="linkAddress != null">
+        #{linkAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="linkCode != null">
+        #{linkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linkEmail != null">
+        #{linkEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="linkCreditType != null">
+        #{linkCreditType,jdbcType=INTEGER},
+      </if>
+      <if test="linkCreditNo != null">
+        #{linkCreditNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isConfirm != null">
+        #{isConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmUser != null">
+        #{confirmUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelUser != null">
+        #{cancelUser,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="finishDate != null">
+        #{finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishNum != null">
+        #{finishNum,jdbcType=INTEGER},
+      </if>
+      <if test="finishMoney != null">
+        #{finishMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payDate != null">
+        #{payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=VARCHAR},
+      </if>
+      <if test="finishUser != null">
+        #{finishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend != null">
+        #{isSend,jdbcType=INTEGER},
+      </if>
+      <if test="sendContent != null">
+        #{sendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendUser != null">
+        #{sendUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelMoney != null">
+        #{cancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isEdit != null">
+        #{isEdit,jdbcType=INTEGER},
+      </if>
+      <if test="isCancel != null">
+        #{isCancel,jdbcType=INTEGER},
+      </if>
+      <if test="sendmsgDate != null">
+        #{sendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ticketType != null">
+        #{ticketType,jdbcType=INTEGER},
+      </if>
+      <if test="interfaceOrderId != null">
+        #{interfaceOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceId != null">
+        #{interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceEditState != null">
+        #{interfaceEditState,jdbcType=INTEGER},
+      </if>
+      <if test="orderPassword != null">
+        #{orderPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isSingle != null">
+        #{isSingle,jdbcType=INTEGER},
+      </if>
+      <if test="parentCustId != null">
+        #{parentCustId,jdbcType=BIGINT},
+      </if>
+      <if test="interfaceProdId != null">
+        #{interfaceProdId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMsgId != null">
+        #{sendMsgId,jdbcType=INTEGER},
+      </if>
+      <if test="memPayMoney != null">
+        #{memPayMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="memOrderMoney != null">
+        #{memOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="oldMemOrderMoney != null">
+        #{oldMemOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payServiceFee != null">
+        #{payServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="accountType != null">
+        #{accountType,jdbcType=INTEGER},
+      </if>
+      <if test="orderCode != null">
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isPackage != null">
+        #{isPackage,jdbcType=INTEGER},
+      </if>
+      <if test="endTravelDate != null">
+        #{endTravelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cancelCustId != null">
+        #{cancelCustId,jdbcType=BIGINT},
+      </if>
+      <if test="cancelState != null">
+        #{cancelState,jdbcType=INTEGER},
+      </if>
+      <if test="printDate != null">
+        #{printDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printUser != null">
+        #{printUser,jdbcType=VARCHAR},
+      </if>
+      <if test="printExcode != null">
+        #{printExcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent1 != null">
+        #{sendContent1,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent2 != null">
+        #{sendContent2,jdbcType=VARCHAR},
+      </if>
+      <if test="isPrint != null">
+        #{isPrint,jdbcType=INTEGER},
+      </if>
+      <if test="printExcode2 != null">
+        #{printExcode2,jdbcType=VARCHAR},
+      </if>
+      <if test="accountMoney != null">
+        #{accountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountDate != null">
+        #{accountDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountUserId != null">
+        #{accountUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="prodDetail != null">
+        #{prodDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="agentReturnMoney != null">
+        #{agentReturnMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="agentReturnDate != null">
+        #{agentReturnDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentReturnUserId != null">
+        #{agentReturnUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderMemo != null">
+        #{orderMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderFiles != null">
+        #{orderFiles,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend2 != null">
+        #{isSend2,jdbcType=INTEGER},
+      </if>
+      <if test="needSendmsgDate != null">
+        #{needSendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mergeOrderId != null">
+        #{mergeOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSource != null">
+        #{orderSource,jdbcType=INTEGER},
+      </if>
+      <if test="payMinute != null">
+        #{payMinute,jdbcType=INTEGER},
+      </if>
+      <if test="sendmsgUser != null">
+        #{sendmsgUser,jdbcType=VARCHAR},
+      </if>
+      <if test="accountCurrencyType != null">
+        #{accountCurrencyType,jdbcType=INTEGER},
+      </if>
+      <if test="accountExchangeRate != null">
+        #{accountExchangeRate,jdbcType=DOUBLE},
+      </if>
+      <if test="accountMoney2 != null">
+        #{accountMoney2,jdbcType=DOUBLE},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="settleType != null">
+        #{settleType,jdbcType=VARCHAR},
+      </if>
+      <if test="isStock != null">
+        #{isStock,jdbcType=INTEGER},
+      </if>
+      <if test="fromAreaId != null">
+        #{fromAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="isAutofinish != null">
+        #{isAutofinish,jdbcType=INTEGER},
+      </if>
+      <if test="priceCodex != null">
+        #{priceCodex,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSourceId != null">
+        #{orderSourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelNum != null">
+        #{cancelNum,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="cashCouponMoney != null">
+        #{cashCouponMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="cashCouponStatus != null">
+        #{cashCouponStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cashCouponNo != null">
+        #{cashCouponNo,jdbcType=BIGINT},
+      </if>
+      <if test="cashCouponDate != null">
+        #{cashCouponDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memCancelMoney != null">
+        #{memCancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderVenueFee != null">
+        #{orderVenueFee,jdbcType=DOUBLE},
+      </if>
+      <if test="isChange != null">
+        #{isChange,jdbcType=INTEGER},
+      </if>
+      <if test="editCustId != null">
+        #{editCustId,jdbcType=INTEGER},
+      </if>
+      <if test="isLock != null">
+        #{isLock,jdbcType=INTEGER},
+      </if>
+      <if test="inferfaceCheckState != null">
+        #{inferfaceCheckState,jdbcType=INTEGER},
+      </if>
+      <if test="memPointMoney != null">
+        #{memPointMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="allPayFee != null">
+        #{allPayFee,jdbcType=DOUBLE},
+      </if>
+      <if test="custMemo != null">
+        #{custMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="accountInnerMemo != null">
+        #{accountInnerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="innerMemo != null">
+        #{innerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="adjust != null">
+        #{adjust,jdbcType=VARCHAR},
+      </if>
+      <if test="changeState != null">
+        #{changeState,jdbcType=INTEGER},
+      </if>
+      <if test="applyUserId != null">
+        #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="returnCustomMoney != null">
+        #{returnCustomMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="interfaceCustId != null">
+        #{interfaceCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="custSmsContent != null">
+        #{custSmsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmMinute != null">
+        #{confirmMinute,jdbcType=INTEGER},
+      </if>
+      <if test="venueId != null">
+        #{venueId,jdbcType=BIGINT},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dongsport.common.model.ds2.OrderInfoExample" resultType="java.lang.Long">
+    select count(*) from order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order_info
+    <set>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderType != null">
+        order_type = #{record.orderType,jdbcType=INTEGER},
+      </if>
+      <if test="record.isSplit != null">
+        is_split = #{record.isSplit,jdbcType=INTEGER},
+      </if>
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=BIGINT},
+      </if>
+      <if test="record.productType != null">
+        product_type = #{record.productType,jdbcType=INTEGER},
+      </if>
+      <if test="record.productNum != null">
+        product_num = #{record.productNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderMoney != null">
+        order_money = #{record.orderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.orderDate != null">
+        order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.custId != null">
+        cust_id = #{record.custId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderCustId != null">
+        order_cust_id = #{record.orderCustId,jdbcType=BIGINT},
+      </if>
+      <if test="record.travelDate != null">
+        travel_date = #{record.travelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.getType != null">
+        get_type = #{record.getType,jdbcType=INTEGER},
+      </if>
+      <if test="record.getPrice != null">
+        get_price = #{record.getPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.refundSet != null">
+        refund_set = #{record.refundSet,jdbcType=INTEGER},
+      </if>
+      <if test="record.cancelDate != null">
+        cancel_date = #{record.cancelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.confirmDate != null">
+        confirm_date = #{record.confirmDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isOnlinepay != null">
+        is_onlinepay = #{record.isOnlinepay,jdbcType=INTEGER},
+      </if>
+      <if test="record.payId != null">
+        pay_id = #{record.payId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkMan != null">
+        link_man = #{record.linkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkPhone != null">
+        link_phone = #{record.linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkAddress != null">
+        link_address = #{record.linkAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkCode != null">
+        link_code = #{record.linkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkEmail != null">
+        link_email = #{record.linkEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkCreditType != null">
+        link_credit_type = #{record.linkCreditType,jdbcType=INTEGER},
+      </if>
+      <if test="record.linkCreditNo != null">
+        link_credit_no = #{record.linkCreditNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payMoney != null">
+        pay_money = #{record.payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.isConfirm != null">
+        is_confirm = #{record.isConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.confirmUser != null">
+        confirm_user = #{record.confirmUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cancelUser != null">
+        cancel_user = #{record.cancelUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payType != null">
+        pay_type = #{record.payType,jdbcType=INTEGER},
+      </if>
+      <if test="record.finishDate != null">
+        finish_date = #{record.finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.finishNum != null">
+        finish_num = #{record.finishNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.finishMoney != null">
+        finish_money = #{record.finishMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.payDate != null">
+        pay_date = #{record.payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payUser != null">
+        pay_user = #{record.payUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finishUser != null">
+        finish_user = #{record.finishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isSend != null">
+        is_send = #{record.isSend,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendContent != null">
+        send_content = #{record.sendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendDate != null">
+        send_date = #{record.sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sendUser != null">
+        send_user = #{record.sendUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cancelMoney != null">
+        cancel_money = #{record.cancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.isEdit != null">
+        is_edit = #{record.isEdit,jdbcType=INTEGER},
+      </if>
+      <if test="record.isCancel != null">
+        is_cancel = #{record.isCancel,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendmsgDate != null">
+        sendmsg_date = #{record.sendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ticketType != null">
+        ticket_type = #{record.ticketType,jdbcType=INTEGER},
+      </if>
+      <if test="record.interfaceOrderId != null">
+        interface_order_id = #{record.interfaceOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.interfaceId != null">
+        interface_id = #{record.interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.interfaceEditState != null">
+        interface_edit_state = #{record.interfaceEditState,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderPassword != null">
+        order_password = #{record.orderPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isSingle != null">
+        is_single = #{record.isSingle,jdbcType=INTEGER},
+      </if>
+      <if test="record.parentCustId != null">
+        parent_cust_id = #{record.parentCustId,jdbcType=BIGINT},
+      </if>
+      <if test="record.interfaceProdId != null">
+        interface_prod_id = #{record.interfaceProdId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendMsgId != null">
+        send_msg_id = #{record.sendMsgId,jdbcType=INTEGER},
+      </if>
+      <if test="record.memPayMoney != null">
+        mem_pay_money = #{record.memPayMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.memOrderMoney != null">
+        mem_order_money = #{record.memOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.oldMemOrderMoney != null">
+        old_mem_order_money = #{record.oldMemOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.payServiceFee != null">
+        pay_service_fee = #{record.payServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountType != null">
+        account_type = #{record.accountType,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderCode != null">
+        order_code = #{record.orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isPackage != null">
+        is_package = #{record.isPackage,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTravelDate != null">
+        end_travel_date = #{record.endTravelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.cancelCustId != null">
+        cancel_cust_id = #{record.cancelCustId,jdbcType=BIGINT},
+      </if>
+      <if test="record.cancelState != null">
+        cancel_state = #{record.cancelState,jdbcType=INTEGER},
+      </if>
+      <if test="record.printDate != null">
+        print_date = #{record.printDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.printUser != null">
+        print_user = #{record.printUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.printExcode != null">
+        print_excode = #{record.printExcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendContent1 != null">
+        send_content1 = #{record.sendContent1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendContent2 != null">
+        send_content2 = #{record.sendContent2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isPrint != null">
+        is_print = #{record.isPrint,jdbcType=INTEGER},
+      </if>
+      <if test="record.printExcode2 != null">
+        print_excode2 = #{record.printExcode2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountMoney != null">
+        account_money = #{record.accountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountDate != null">
+        account_date = #{record.accountDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.accountUserId != null">
+        account_user_id = #{record.accountUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prodDetail != null">
+        prod_detail = #{record.prodDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agentReturnMoney != null">
+        agent_return_money = #{record.agentReturnMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.agentReturnDate != null">
+        agent_return_date = #{record.agentReturnDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.agentReturnUserId != null">
+        agent_return_user_id = #{record.agentReturnUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderMemo != null">
+        order_memo = #{record.orderMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderFiles != null">
+        order_files = #{record.orderFiles,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isSend2 != null">
+        is_send2 = #{record.isSend2,jdbcType=INTEGER},
+      </if>
+      <if test="record.needSendmsgDate != null">
+        need_sendmsg_date = #{record.needSendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mergeOrderId != null">
+        merge_order_id = #{record.mergeOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderSource != null">
+        order_source = #{record.orderSource,jdbcType=INTEGER},
+      </if>
+      <if test="record.payMinute != null">
+        pay_minute = #{record.payMinute,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendmsgUser != null">
+        sendmsg_user = #{record.sendmsgUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountCurrencyType != null">
+        account_currency_type = #{record.accountCurrencyType,jdbcType=INTEGER},
+      </if>
+      <if test="record.accountExchangeRate != null">
+        account_exchange_rate = #{record.accountExchangeRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountMoney2 != null">
+        account_money2 = #{record.accountMoney2,jdbcType=DOUBLE},
+      </if>
+      <if test="record.areaId != null">
+        area_id = #{record.areaId,jdbcType=INTEGER},
+      </if>
+      <if test="record.settleType != null">
+        settle_type = #{record.settleType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isStock != null">
+        is_stock = #{record.isStock,jdbcType=INTEGER},
+      </if>
+      <if test="record.fromAreaId != null">
+        from_area_id = #{record.fromAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="record.isAutofinish != null">
+        is_autofinish = #{record.isAutofinish,jdbcType=INTEGER},
+      </if>
+      <if test="record.priceCodex != null">
+        price_codex = #{record.priceCodex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderSourceId != null">
+        order_source_id = #{record.orderSourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cancelNum != null">
+        cancel_num = #{record.cancelNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberId != null">
+        member_id = #{record.memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cashCouponMoney != null">
+        cash_coupon_money = #{record.cashCouponMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.cashCouponStatus != null">
+        cash_coupon_status = #{record.cashCouponStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.cashCouponNo != null">
+        cash_coupon_no = #{record.cashCouponNo,jdbcType=BIGINT},
+      </if>
+      <if test="record.cashCouponDate != null">
+        cash_coupon_date = #{record.cashCouponDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.memCancelMoney != null">
+        mem_cancel_money = #{record.memCancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.orderVenueFee != null">
+        order_venue_fee = #{record.orderVenueFee,jdbcType=DOUBLE},
+      </if>
+      <if test="record.isChange != null">
+        is_change = #{record.isChange,jdbcType=INTEGER},
+      </if>
+      <if test="record.editCustId != null">
+        edit_cust_id = #{record.editCustId,jdbcType=INTEGER},
+      </if>
+      <if test="record.isLock != null">
+        is_lock = #{record.isLock,jdbcType=INTEGER},
+      </if>
+      <if test="record.inferfaceCheckState != null">
+        inferface_check_state = #{record.inferfaceCheckState,jdbcType=INTEGER},
+      </if>
+      <if test="record.memPointMoney != null">
+        mem_point_money = #{record.memPointMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.allPayFee != null">
+        all_pay_fee = #{record.allPayFee,jdbcType=DOUBLE},
+      </if>
+      <if test="record.custMemo != null">
+        cust_memo = #{record.custMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountInnerMemo != null">
+        account_inner_memo = #{record.accountInnerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.innerMemo != null">
+        inner_memo = #{record.innerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adjust != null">
+        adjust = #{record.adjust,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeState != null">
+        change_state = #{record.changeState,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyUserId != null">
+        apply_user_id = #{record.applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.returnCustomMoney != null">
+        return_custom_money = #{record.returnCustomMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.interfaceCustId != null">
+        interface_cust_id = #{record.interfaceCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custSmsContent != null">
+        cust_sms_content = #{record.custSmsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.confirmMinute != null">
+        confirm_minute = #{record.confirmMinute,jdbcType=INTEGER},
+      </if>
+      <if test="record.venueId != null">
+        venue_id = #{record.venueId,jdbcType=BIGINT},
+      </if>
+      <if test="record.siteId != null">
+        site_id = #{record.siteId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order_info
+    set order_id = #{record.orderId,jdbcType=BIGINT},
+      order_type = #{record.orderType,jdbcType=INTEGER},
+      is_split = #{record.isSplit,jdbcType=INTEGER},
+      product_id = #{record.productId,jdbcType=BIGINT},
+      product_type = #{record.productType,jdbcType=INTEGER},
+      product_num = #{record.productNum,jdbcType=INTEGER},
+      order_money = #{record.orderMoney,jdbcType=DOUBLE},
+      order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      cust_id = #{record.custId,jdbcType=BIGINT},
+      order_cust_id = #{record.orderCustId,jdbcType=BIGINT},
+      travel_date = #{record.travelDate,jdbcType=TIMESTAMP},
+      get_type = #{record.getType,jdbcType=INTEGER},
+      get_price = #{record.getPrice,jdbcType=DOUBLE},
+      state = #{record.state,jdbcType=INTEGER},
+      refund_set = #{record.refundSet,jdbcType=INTEGER},
+      cancel_date = #{record.cancelDate,jdbcType=TIMESTAMP},
+      confirm_date = #{record.confirmDate,jdbcType=TIMESTAMP},
+      is_onlinepay = #{record.isOnlinepay,jdbcType=INTEGER},
+      pay_id = #{record.payId,jdbcType=VARCHAR},
+      link_man = #{record.linkMan,jdbcType=VARCHAR},
+      link_phone = #{record.linkPhone,jdbcType=VARCHAR},
+      link_address = #{record.linkAddress,jdbcType=VARCHAR},
+      link_code = #{record.linkCode,jdbcType=VARCHAR},
+      link_email = #{record.linkEmail,jdbcType=VARCHAR},
+      link_credit_type = #{record.linkCreditType,jdbcType=INTEGER},
+      link_credit_no = #{record.linkCreditNo,jdbcType=VARCHAR},
+      pay_money = #{record.payMoney,jdbcType=DOUBLE},
+      is_confirm = #{record.isConfirm,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      confirm_user = #{record.confirmUser,jdbcType=VARCHAR},
+      cancel_user = #{record.cancelUser,jdbcType=VARCHAR},
+      pay_type = #{record.payType,jdbcType=INTEGER},
+      finish_date = #{record.finishDate,jdbcType=TIMESTAMP},
+      finish_num = #{record.finishNum,jdbcType=INTEGER},
+      finish_money = #{record.finishMoney,jdbcType=DOUBLE},
+      pay_date = #{record.payDate,jdbcType=TIMESTAMP},
+      pay_user = #{record.payUser,jdbcType=VARCHAR},
+      finish_user = #{record.finishUser,jdbcType=VARCHAR},
+      is_send = #{record.isSend,jdbcType=INTEGER},
+      send_content = #{record.sendContent,jdbcType=VARCHAR},
+      send_date = #{record.sendDate,jdbcType=TIMESTAMP},
+      send_user = #{record.sendUser,jdbcType=VARCHAR},
+      cancel_money = #{record.cancelMoney,jdbcType=DOUBLE},
+      is_edit = #{record.isEdit,jdbcType=INTEGER},
+      is_cancel = #{record.isCancel,jdbcType=INTEGER},
+      sendmsg_date = #{record.sendmsgDate,jdbcType=TIMESTAMP},
+      ticket_type = #{record.ticketType,jdbcType=INTEGER},
+      interface_order_id = #{record.interfaceOrderId,jdbcType=VARCHAR},
+      interface_id = #{record.interfaceId,jdbcType=VARCHAR},
+      interface_edit_state = #{record.interfaceEditState,jdbcType=INTEGER},
+      order_password = #{record.orderPassword,jdbcType=VARCHAR},
+      is_single = #{record.isSingle,jdbcType=INTEGER},
+      parent_cust_id = #{record.parentCustId,jdbcType=BIGINT},
+      interface_prod_id = #{record.interfaceProdId,jdbcType=VARCHAR},
+      send_msg_id = #{record.sendMsgId,jdbcType=INTEGER},
+      mem_pay_money = #{record.memPayMoney,jdbcType=DOUBLE},
+      mem_order_money = #{record.memOrderMoney,jdbcType=DOUBLE},
+      old_mem_order_money = #{record.oldMemOrderMoney,jdbcType=DOUBLE},
+      pay_service_fee = #{record.payServiceFee,jdbcType=DOUBLE},
+      account_type = #{record.accountType,jdbcType=INTEGER},
+      order_code = #{record.orderCode,jdbcType=VARCHAR},
+      is_package = #{record.isPackage,jdbcType=INTEGER},
+      end_travel_date = #{record.endTravelDate,jdbcType=TIMESTAMP},
+      cancel_cust_id = #{record.cancelCustId,jdbcType=BIGINT},
+      cancel_state = #{record.cancelState,jdbcType=INTEGER},
+      print_date = #{record.printDate,jdbcType=TIMESTAMP},
+      print_user = #{record.printUser,jdbcType=VARCHAR},
+      print_excode = #{record.printExcode,jdbcType=VARCHAR},
+      send_content1 = #{record.sendContent1,jdbcType=VARCHAR},
+      send_content2 = #{record.sendContent2,jdbcType=VARCHAR},
+      is_print = #{record.isPrint,jdbcType=INTEGER},
+      print_excode2 = #{record.printExcode2,jdbcType=VARCHAR},
+      account_money = #{record.accountMoney,jdbcType=DOUBLE},
+      account_date = #{record.accountDate,jdbcType=TIMESTAMP},
+      account_user_id = #{record.accountUserId,jdbcType=VARCHAR},
+      prod_detail = #{record.prodDetail,jdbcType=VARCHAR},
+      agent_return_money = #{record.agentReturnMoney,jdbcType=DOUBLE},
+      agent_return_date = #{record.agentReturnDate,jdbcType=TIMESTAMP},
+      agent_return_user_id = #{record.agentReturnUserId,jdbcType=VARCHAR},
+      order_memo = #{record.orderMemo,jdbcType=VARCHAR},
+      order_files = #{record.orderFiles,jdbcType=VARCHAR},
+      is_send2 = #{record.isSend2,jdbcType=INTEGER},
+      need_sendmsg_date = #{record.needSendmsgDate,jdbcType=TIMESTAMP},
+      merge_order_id = #{record.mergeOrderId,jdbcType=INTEGER},
+      order_source = #{record.orderSource,jdbcType=INTEGER},
+      pay_minute = #{record.payMinute,jdbcType=INTEGER},
+      sendmsg_user = #{record.sendmsgUser,jdbcType=VARCHAR},
+      account_currency_type = #{record.accountCurrencyType,jdbcType=INTEGER},
+      account_exchange_rate = #{record.accountExchangeRate,jdbcType=DOUBLE},
+      account_money2 = #{record.accountMoney2,jdbcType=DOUBLE},
+      area_id = #{record.areaId,jdbcType=INTEGER},
+      settle_type = #{record.settleType,jdbcType=VARCHAR},
+      is_stock = #{record.isStock,jdbcType=INTEGER},
+      from_area_id = #{record.fromAreaId,jdbcType=INTEGER},
+      is_autofinish = #{record.isAutofinish,jdbcType=INTEGER},
+      price_codex = #{record.priceCodex,jdbcType=VARCHAR},
+      order_source_id = #{record.orderSourceId,jdbcType=VARCHAR},
+      cancel_num = #{record.cancelNum,jdbcType=INTEGER},
+      member_id = #{record.memberId,jdbcType=VARCHAR},
+      cash_coupon_money = #{record.cashCouponMoney,jdbcType=DOUBLE},
+      cash_coupon_status = #{record.cashCouponStatus,jdbcType=INTEGER},
+      cash_coupon_no = #{record.cashCouponNo,jdbcType=BIGINT},
+      cash_coupon_date = #{record.cashCouponDate,jdbcType=TIMESTAMP},
+      mem_cancel_money = #{record.memCancelMoney,jdbcType=DOUBLE},
+      order_venue_fee = #{record.orderVenueFee,jdbcType=DOUBLE},
+      is_change = #{record.isChange,jdbcType=INTEGER},
+      edit_cust_id = #{record.editCustId,jdbcType=INTEGER},
+      is_lock = #{record.isLock,jdbcType=INTEGER},
+      inferface_check_state = #{record.inferfaceCheckState,jdbcType=INTEGER},
+      mem_point_money = #{record.memPointMoney,jdbcType=DOUBLE},
+      all_pay_fee = #{record.allPayFee,jdbcType=DOUBLE},
+      cust_memo = #{record.custMemo,jdbcType=VARCHAR},
+      account_inner_memo = #{record.accountInnerMemo,jdbcType=VARCHAR},
+      inner_memo = #{record.innerMemo,jdbcType=VARCHAR},
+      adjust = #{record.adjust,jdbcType=VARCHAR},
+      change_state = #{record.changeState,jdbcType=INTEGER},
+      apply_user_id = #{record.applyUserId,jdbcType=VARCHAR},
+      return_custom_money = #{record.returnCustomMoney,jdbcType=DOUBLE},
+      interface_cust_id = #{record.interfaceCustId,jdbcType=VARCHAR},
+      cust_sms_content = #{record.custSmsContent,jdbcType=VARCHAR},
+      confirm_minute = #{record.confirmMinute,jdbcType=INTEGER},
+      venue_id = #{record.venueId,jdbcType=BIGINT},
+      site_id = #{record.siteId,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dongsport.common.model.ds2.OrderInfo">
+    update order_info
+    <set>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="isSplit != null">
+        is_split = #{isSplit,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        product_num = #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderMoney != null">
+        order_money = #{orderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderDate != null">
+        order_date = #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="custId != null">
+        cust_id = #{custId,jdbcType=BIGINT},
+      </if>
+      <if test="orderCustId != null">
+        order_cust_id = #{orderCustId,jdbcType=BIGINT},
+      </if>
+      <if test="travelDate != null">
+        travel_date = #{travelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getType != null">
+        get_type = #{getType,jdbcType=INTEGER},
+      </if>
+      <if test="getPrice != null">
+        get_price = #{getPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="refundSet != null">
+        refund_set = #{refundSet,jdbcType=INTEGER},
+      </if>
+      <if test="cancelDate != null">
+        cancel_date = #{cancelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmDate != null">
+        confirm_date = #{confirmDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isOnlinepay != null">
+        is_onlinepay = #{isOnlinepay,jdbcType=INTEGER},
+      </if>
+      <if test="payId != null">
+        pay_id = #{payId,jdbcType=VARCHAR},
+      </if>
+      <if test="linkMan != null">
+        link_man = #{linkMan,jdbcType=VARCHAR},
+      </if>
+      <if test="linkPhone != null">
+        link_phone = #{linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="linkAddress != null">
+        link_address = #{linkAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="linkCode != null">
+        link_code = #{linkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="linkEmail != null">
+        link_email = #{linkEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="linkCreditType != null">
+        link_credit_type = #{linkCreditType,jdbcType=INTEGER},
+      </if>
+      <if test="linkCreditNo != null">
+        link_credit_no = #{linkCreditNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        pay_money = #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isConfirm != null">
+        is_confirm = #{isConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmUser != null">
+        confirm_user = #{confirmUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelUser != null">
+        cancel_user = #{cancelUser,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="finishDate != null">
+        finish_date = #{finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishNum != null">
+        finish_num = #{finishNum,jdbcType=INTEGER},
+      </if>
+      <if test="finishMoney != null">
+        finish_money = #{finishMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payDate != null">
+        pay_date = #{payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=VARCHAR},
+      </if>
+      <if test="finishUser != null">
+        finish_user = #{finishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend != null">
+        is_send = #{isSend,jdbcType=INTEGER},
+      </if>
+      <if test="sendContent != null">
+        send_content = #{sendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        send_date = #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendUser != null">
+        send_user = #{sendUser,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelMoney != null">
+        cancel_money = #{cancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isEdit != null">
+        is_edit = #{isEdit,jdbcType=INTEGER},
+      </if>
+      <if test="isCancel != null">
+        is_cancel = #{isCancel,jdbcType=INTEGER},
+      </if>
+      <if test="sendmsgDate != null">
+        sendmsg_date = #{sendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ticketType != null">
+        ticket_type = #{ticketType,jdbcType=INTEGER},
+      </if>
+      <if test="interfaceOrderId != null">
+        interface_order_id = #{interfaceOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceId != null">
+        interface_id = #{interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceEditState != null">
+        interface_edit_state = #{interfaceEditState,jdbcType=INTEGER},
+      </if>
+      <if test="orderPassword != null">
+        order_password = #{orderPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="isSingle != null">
+        is_single = #{isSingle,jdbcType=INTEGER},
+      </if>
+      <if test="parentCustId != null">
+        parent_cust_id = #{parentCustId,jdbcType=BIGINT},
+      </if>
+      <if test="interfaceProdId != null">
+        interface_prod_id = #{interfaceProdId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMsgId != null">
+        send_msg_id = #{sendMsgId,jdbcType=INTEGER},
+      </if>
+      <if test="memPayMoney != null">
+        mem_pay_money = #{memPayMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="memOrderMoney != null">
+        mem_order_money = #{memOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="oldMemOrderMoney != null">
+        old_mem_order_money = #{oldMemOrderMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payServiceFee != null">
+        pay_service_fee = #{payServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="accountType != null">
+        account_type = #{accountType,jdbcType=INTEGER},
+      </if>
+      <if test="orderCode != null">
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isPackage != null">
+        is_package = #{isPackage,jdbcType=INTEGER},
+      </if>
+      <if test="endTravelDate != null">
+        end_travel_date = #{endTravelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cancelCustId != null">
+        cancel_cust_id = #{cancelCustId,jdbcType=BIGINT},
+      </if>
+      <if test="cancelState != null">
+        cancel_state = #{cancelState,jdbcType=INTEGER},
+      </if>
+      <if test="printDate != null">
+        print_date = #{printDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="printUser != null">
+        print_user = #{printUser,jdbcType=VARCHAR},
+      </if>
+      <if test="printExcode != null">
+        print_excode = #{printExcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent1 != null">
+        send_content1 = #{sendContent1,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent2 != null">
+        send_content2 = #{sendContent2,jdbcType=VARCHAR},
+      </if>
+      <if test="isPrint != null">
+        is_print = #{isPrint,jdbcType=INTEGER},
+      </if>
+      <if test="printExcode2 != null">
+        print_excode2 = #{printExcode2,jdbcType=VARCHAR},
+      </if>
+      <if test="accountMoney != null">
+        account_money = #{accountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountDate != null">
+        account_date = #{accountDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountUserId != null">
+        account_user_id = #{accountUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="prodDetail != null">
+        prod_detail = #{prodDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="agentReturnMoney != null">
+        agent_return_money = #{agentReturnMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="agentReturnDate != null">
+        agent_return_date = #{agentReturnDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentReturnUserId != null">
+        agent_return_user_id = #{agentReturnUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderMemo != null">
+        order_memo = #{orderMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderFiles != null">
+        order_files = #{orderFiles,jdbcType=VARCHAR},
+      </if>
+      <if test="isSend2 != null">
+        is_send2 = #{isSend2,jdbcType=INTEGER},
+      </if>
+      <if test="needSendmsgDate != null">
+        need_sendmsg_date = #{needSendmsgDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mergeOrderId != null">
+        merge_order_id = #{mergeOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSource != null">
+        order_source = #{orderSource,jdbcType=INTEGER},
+      </if>
+      <if test="payMinute != null">
+        pay_minute = #{payMinute,jdbcType=INTEGER},
+      </if>
+      <if test="sendmsgUser != null">
+        sendmsg_user = #{sendmsgUser,jdbcType=VARCHAR},
+      </if>
+      <if test="accountCurrencyType != null">
+        account_currency_type = #{accountCurrencyType,jdbcType=INTEGER},
+      </if>
+      <if test="accountExchangeRate != null">
+        account_exchange_rate = #{accountExchangeRate,jdbcType=DOUBLE},
+      </if>
+      <if test="accountMoney2 != null">
+        account_money2 = #{accountMoney2,jdbcType=DOUBLE},
+      </if>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="settleType != null">
+        settle_type = #{settleType,jdbcType=VARCHAR},
+      </if>
+      <if test="isStock != null">
+        is_stock = #{isStock,jdbcType=INTEGER},
+      </if>
+      <if test="fromAreaId != null">
+        from_area_id = #{fromAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="isAutofinish != null">
+        is_autofinish = #{isAutofinish,jdbcType=INTEGER},
+      </if>
+      <if test="priceCodex != null">
+        price_codex = #{priceCodex,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSourceId != null">
+        order_source_id = #{orderSourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="cancelNum != null">
+        cancel_num = #{cancelNum,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        member_id = #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="cashCouponMoney != null">
+        cash_coupon_money = #{cashCouponMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="cashCouponStatus != null">
+        cash_coupon_status = #{cashCouponStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cashCouponNo != null">
+        cash_coupon_no = #{cashCouponNo,jdbcType=BIGINT},
+      </if>
+      <if test="cashCouponDate != null">
+        cash_coupon_date = #{cashCouponDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memCancelMoney != null">
+        mem_cancel_money = #{memCancelMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderVenueFee != null">
+        order_venue_fee = #{orderVenueFee,jdbcType=DOUBLE},
+      </if>
+      <if test="isChange != null">
+        is_change = #{isChange,jdbcType=INTEGER},
+      </if>
+      <if test="editCustId != null">
+        edit_cust_id = #{editCustId,jdbcType=INTEGER},
+      </if>
+      <if test="isLock != null">
+        is_lock = #{isLock,jdbcType=INTEGER},
+      </if>
+      <if test="inferfaceCheckState != null">
+        inferface_check_state = #{inferfaceCheckState,jdbcType=INTEGER},
+      </if>
+      <if test="memPointMoney != null">
+        mem_point_money = #{memPointMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="allPayFee != null">
+        all_pay_fee = #{allPayFee,jdbcType=DOUBLE},
+      </if>
+      <if test="custMemo != null">
+        cust_memo = #{custMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="accountInnerMemo != null">
+        account_inner_memo = #{accountInnerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="innerMemo != null">
+        inner_memo = #{innerMemo,jdbcType=VARCHAR},
+      </if>
+      <if test="adjust != null">
+        adjust = #{adjust,jdbcType=VARCHAR},
+      </if>
+      <if test="changeState != null">
+        change_state = #{changeState,jdbcType=INTEGER},
+      </if>
+      <if test="applyUserId != null">
+        apply_user_id = #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="returnCustomMoney != null">
+        return_custom_money = #{returnCustomMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="interfaceCustId != null">
+        interface_cust_id = #{interfaceCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="custSmsContent != null">
+        cust_sms_content = #{custSmsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmMinute != null">
+        confirm_minute = #{confirmMinute,jdbcType=INTEGER},
+      </if>
+      <if test="venueId != null">
+        venue_id = #{venueId,jdbcType=BIGINT},
+      </if>
+      <if test="siteId != null">
+        site_id = #{siteId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dongsport.common.model.ds2.OrderInfo">
+    update order_info
+    set order_type = #{orderType,jdbcType=INTEGER},
+      is_split = #{isSplit,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=BIGINT},
+      product_type = #{productType,jdbcType=INTEGER},
+      product_num = #{productNum,jdbcType=INTEGER},
+      order_money = #{orderMoney,jdbcType=DOUBLE},
+      order_date = #{orderDate,jdbcType=TIMESTAMP},
+      cust_id = #{custId,jdbcType=BIGINT},
+      order_cust_id = #{orderCustId,jdbcType=BIGINT},
+      travel_date = #{travelDate,jdbcType=TIMESTAMP},
+      get_type = #{getType,jdbcType=INTEGER},
+      get_price = #{getPrice,jdbcType=DOUBLE},
+      state = #{state,jdbcType=INTEGER},
+      refund_set = #{refundSet,jdbcType=INTEGER},
+      cancel_date = #{cancelDate,jdbcType=TIMESTAMP},
+      confirm_date = #{confirmDate,jdbcType=TIMESTAMP},
+      is_onlinepay = #{isOnlinepay,jdbcType=INTEGER},
+      pay_id = #{payId,jdbcType=VARCHAR},
+      link_man = #{linkMan,jdbcType=VARCHAR},
+      link_phone = #{linkPhone,jdbcType=VARCHAR},
+      link_address = #{linkAddress,jdbcType=VARCHAR},
+      link_code = #{linkCode,jdbcType=VARCHAR},
+      link_email = #{linkEmail,jdbcType=VARCHAR},
+      link_credit_type = #{linkCreditType,jdbcType=INTEGER},
+      link_credit_no = #{linkCreditNo,jdbcType=VARCHAR},
+      pay_money = #{payMoney,jdbcType=DOUBLE},
+      is_confirm = #{isConfirm,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=VARCHAR},
+      confirm_user = #{confirmUser,jdbcType=VARCHAR},
+      cancel_user = #{cancelUser,jdbcType=VARCHAR},
+      pay_type = #{payType,jdbcType=INTEGER},
+      finish_date = #{finishDate,jdbcType=TIMESTAMP},
+      finish_num = #{finishNum,jdbcType=INTEGER},
+      finish_money = #{finishMoney,jdbcType=DOUBLE},
+      pay_date = #{payDate,jdbcType=TIMESTAMP},
+      pay_user = #{payUser,jdbcType=VARCHAR},
+      finish_user = #{finishUser,jdbcType=VARCHAR},
+      is_send = #{isSend,jdbcType=INTEGER},
+      send_content = #{sendContent,jdbcType=VARCHAR},
+      send_date = #{sendDate,jdbcType=TIMESTAMP},
+      send_user = #{sendUser,jdbcType=VARCHAR},
+      cancel_money = #{cancelMoney,jdbcType=DOUBLE},
+      is_edit = #{isEdit,jdbcType=INTEGER},
+      is_cancel = #{isCancel,jdbcType=INTEGER},
+      sendmsg_date = #{sendmsgDate,jdbcType=TIMESTAMP},
+      ticket_type = #{ticketType,jdbcType=INTEGER},
+      interface_order_id = #{interfaceOrderId,jdbcType=VARCHAR},
+      interface_id = #{interfaceId,jdbcType=VARCHAR},
+      interface_edit_state = #{interfaceEditState,jdbcType=INTEGER},
+      order_password = #{orderPassword,jdbcType=VARCHAR},
+      is_single = #{isSingle,jdbcType=INTEGER},
+      parent_cust_id = #{parentCustId,jdbcType=BIGINT},
+      interface_prod_id = #{interfaceProdId,jdbcType=VARCHAR},
+      send_msg_id = #{sendMsgId,jdbcType=INTEGER},
+      mem_pay_money = #{memPayMoney,jdbcType=DOUBLE},
+      mem_order_money = #{memOrderMoney,jdbcType=DOUBLE},
+      old_mem_order_money = #{oldMemOrderMoney,jdbcType=DOUBLE},
+      pay_service_fee = #{payServiceFee,jdbcType=DOUBLE},
+      account_type = #{accountType,jdbcType=INTEGER},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      is_package = #{isPackage,jdbcType=INTEGER},
+      end_travel_date = #{endTravelDate,jdbcType=TIMESTAMP},
+      cancel_cust_id = #{cancelCustId,jdbcType=BIGINT},
+      cancel_state = #{cancelState,jdbcType=INTEGER},
+      print_date = #{printDate,jdbcType=TIMESTAMP},
+      print_user = #{printUser,jdbcType=VARCHAR},
+      print_excode = #{printExcode,jdbcType=VARCHAR},
+      send_content1 = #{sendContent1,jdbcType=VARCHAR},
+      send_content2 = #{sendContent2,jdbcType=VARCHAR},
+      is_print = #{isPrint,jdbcType=INTEGER},
+      print_excode2 = #{printExcode2,jdbcType=VARCHAR},
+      account_money = #{accountMoney,jdbcType=DOUBLE},
+      account_date = #{accountDate,jdbcType=TIMESTAMP},
+      account_user_id = #{accountUserId,jdbcType=VARCHAR},
+      prod_detail = #{prodDetail,jdbcType=VARCHAR},
+      agent_return_money = #{agentReturnMoney,jdbcType=DOUBLE},
+      agent_return_date = #{agentReturnDate,jdbcType=TIMESTAMP},
+      agent_return_user_id = #{agentReturnUserId,jdbcType=VARCHAR},
+      order_memo = #{orderMemo,jdbcType=VARCHAR},
+      order_files = #{orderFiles,jdbcType=VARCHAR},
+      is_send2 = #{isSend2,jdbcType=INTEGER},
+      need_sendmsg_date = #{needSendmsgDate,jdbcType=TIMESTAMP},
+      merge_order_id = #{mergeOrderId,jdbcType=INTEGER},
+      order_source = #{orderSource,jdbcType=INTEGER},
+      pay_minute = #{payMinute,jdbcType=INTEGER},
+      sendmsg_user = #{sendmsgUser,jdbcType=VARCHAR},
+      account_currency_type = #{accountCurrencyType,jdbcType=INTEGER},
+      account_exchange_rate = #{accountExchangeRate,jdbcType=DOUBLE},
+      account_money2 = #{accountMoney2,jdbcType=DOUBLE},
+      area_id = #{areaId,jdbcType=INTEGER},
+      settle_type = #{settleType,jdbcType=VARCHAR},
+      is_stock = #{isStock,jdbcType=INTEGER},
+      from_area_id = #{fromAreaId,jdbcType=INTEGER},
+      is_autofinish = #{isAutofinish,jdbcType=INTEGER},
+      price_codex = #{priceCodex,jdbcType=VARCHAR},
+      order_source_id = #{orderSourceId,jdbcType=VARCHAR},
+      cancel_num = #{cancelNum,jdbcType=INTEGER},
+      member_id = #{memberId,jdbcType=VARCHAR},
+      cash_coupon_money = #{cashCouponMoney,jdbcType=DOUBLE},
+      cash_coupon_status = #{cashCouponStatus,jdbcType=INTEGER},
+      cash_coupon_no = #{cashCouponNo,jdbcType=BIGINT},
+      cash_coupon_date = #{cashCouponDate,jdbcType=TIMESTAMP},
+      mem_cancel_money = #{memCancelMoney,jdbcType=DOUBLE},
+      order_venue_fee = #{orderVenueFee,jdbcType=DOUBLE},
+      is_change = #{isChange,jdbcType=INTEGER},
+      edit_cust_id = #{editCustId,jdbcType=INTEGER},
+      is_lock = #{isLock,jdbcType=INTEGER},
+      inferface_check_state = #{inferfaceCheckState,jdbcType=INTEGER},
+      mem_point_money = #{memPointMoney,jdbcType=DOUBLE},
+      all_pay_fee = #{allPayFee,jdbcType=DOUBLE},
+      cust_memo = #{custMemo,jdbcType=VARCHAR},
+      account_inner_memo = #{accountInnerMemo,jdbcType=VARCHAR},
+      inner_memo = #{innerMemo,jdbcType=VARCHAR},
+      adjust = #{adjust,jdbcType=VARCHAR},
+      change_state = #{changeState,jdbcType=INTEGER},
+      apply_user_id = #{applyUserId,jdbcType=VARCHAR},
+      return_custom_money = #{returnCustomMoney,jdbcType=DOUBLE},
+      interface_cust_id = #{interfaceCustId,jdbcType=VARCHAR},
+      cust_sms_content = #{custSmsContent,jdbcType=VARCHAR},
+      confirm_minute = #{confirmMinute,jdbcType=INTEGER},
+      venue_id = #{venueId,jdbcType=BIGINT},
+      site_id = #{siteId,jdbcType=BIGINT}
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+  <sql id="pagePrefix">
+    <if test="page != null">
+      <if test="dialect == 'oracle'">
+        select * from ( select row_.*, rownum rownum_ from ( 
+      </if>
+    </if>
+  </sql>
+  <sql id="pageSuffix">
+    <if test="page != null">
+      <if test="dialect == 'oracle'">
+        <![CDATA[ ) row_ ) where rownum_ > #{page.start} and rownum_ <= (#{page.start} + #{page.limit}) ]]>
+      </if>
+      <if test="dialect == 'mysql'">
+        limit #{page.start} , #{page.limit}
+      </if>
+    </if>
+  </sql>
+</mapper>
